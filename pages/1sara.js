@@ -88,7 +88,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', margin: '20px', padding: '10px', fontFamily: 'Futura, sans-serif' }}>
+    <div style={{ textAlign: 'center', margin: '20px', padding: '10px', fontFamily: 'Pretendard' }}>
       {/* 상단 바 */}
       <div
         style={{
@@ -181,7 +181,7 @@ const MusicPlayer = () => {
         borderRadius: '10px', // 모서리 둥글게
         padding: '20px', // 내부 여백
         width: '100%', // 화면 크기에 맞춰 조정
-        maxWidth: '300px', // 최대 가로 크기
+        maxWidth: '285px', // 최대 가로 크기
         height: '210px', // 높이 고정
         margin: '0 auto', // 가운데 정렬
         textAlign: 'center' // 텍스트 및 이미지 가운데 정렬
@@ -197,7 +197,7 @@ const MusicPlayer = () => {
               <img
                 src={lyrics[currentLyricIndex - 1].image}
                 alt="이전 가사에 맞는 이미지"
-                style={{ width: '100%', maxWidth: '300px', height: 'auto', display: 'block', margin: '0 auto' }}
+                style={{ width: '90%', maxWidth: '300px', height: 'auto', display: 'block', margin: '0 auto' }}
               />
             )}
           </div>
@@ -221,7 +221,7 @@ const MusicPlayer = () => {
               <img
                 src={lyrics[currentLyricIndex + 1].image}
                 alt="다음 가사에 맞는 이미지"
-                style={{ width: '100%', maxWidth: '300px', height: 'auto', display: 'block', margin: '0 auto' }}
+                style={{ width: '90%', maxWidth: '300px', height: 'auto', display: 'block', margin: '0 auto' }}
               />
             )}
           </div>
