@@ -1,12 +1,14 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentLyric, setCurrentLyric] = useState('');
   const [currentImage, setCurrentImage] = useState('');
+  const [progress, setProgress] = useState(0);
+  const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
   const audioRef = useRef(null);
 
   const lyrics = [
@@ -20,7 +22,46 @@ const MusicPlayer = () => {
     { time: 44, text: "", image: "/images/1sara/4.png" },
   ];
 
+  const handlePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.audioEl.current.pause();
+      } else {
+        audioRef.current.audioEl.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleRewind = () => {
+    if (audioRef.current) {
+      const currentTime = audioRef.current.audioEl.current.currentTime;
+      const currentLyricIndex = lyrics.findIndex(lyric => lyric.time <= currentTime && currentTime < (lyrics[lyrics.indexOf(lyric) + 1]?.time || Infinity));
+      
+      if (currentLyricIndex > 0) {
+        // 이전 가사로 이동
+        audioRef.current.audioEl.current.currentTime = lyrics[currentLyricIndex - 1].time;
+      } else {
+        // 첫 번째 가사로 돌아가기
+        audioRef.current.audioEl.current.currentTime = 0;
+      }
+    }
+  };
+
+  const handleForward = () => {
+    if (audioRef.current) {
+      const currentTime = audioRef.current.audioEl.current.currentTime;
+      const nextLyric = lyrics.find(lyric => lyric.time > currentTime);
+      if (nextLyric) {
+        audioRef.current.audioEl.current.currentTime = nextLyric.time;
+      }
+    }
+  };
+
   const handleListen = (currentTime) => {
+    const duration = audioRef.current.audioEl.current.duration;
+    setProgress((currentTime / duration) * 100);
+
     const currentLyricObj = lyrics
       .slice()
       .reverse()
@@ -29,9 +70,20 @@ const MusicPlayer = () => {
     if (currentLyricObj) {
       setCurrentLyric(currentLyricObj.text);
       setCurrentImage(currentLyricObj.image);
+      setCurrentLyricIndex(lyrics.indexOf(currentLyricObj));
     } else {
       setCurrentLyric('');
       setCurrentImage('');
+      setCurrentLyricIndex(0);
+    }
+  };
+
+  const handleProgressClick = (e) => {
+    if (audioRef.current) {
+      const rect = e.target.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const newTime = (clickX / rect.width) * audioRef.current.audioEl.current.duration;
+      audioRef.current.audioEl.current.currentTime = newTime;
     }
   };
 
@@ -71,49 +123,99 @@ const MusicPlayer = () => {
       {/* 음악 커버 이미지 추가 */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
         <img
-          src="/images/3gunro.png"
+          src="/images/sara.jpg"
           alt="음악 커버"
-          style={{ width: '330px', height: 'auto' }}
+          style={{ width: '330px', height: 'auto', borderRadius: '20px' }}  // 모서리 라운드 추가
         />
+      </div>
+
+      {/* 재생 프로그레스바 */}
+      <div
+        onClick={handleProgressClick}
+        style={{ position: 'relative', width: '100%', maxWidth: '330px', height: '10px', backgroundColor: '#e0e0e0', borderRadius: '5px', margin: '0 auto 10px', cursor: 'pointer' }}
+      >
+        <div style={{ width: `${progress}%`, height: '100%', backgroundColor: '#3b5998', borderRadius: '5px' }}></div>
       </div>
 
       {/* 기본 음악 플레이어 */}
       <ReactAudioPlayer
         ref={audioRef}
         src="/1sara.mp3"
-        controls
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
+        controls={false}  // 기본 컨트롤 숨기기
         listenInterval={100}
         onListen={handleListen}
-        style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}
+        style={{ width: '100%', maxWidth: '330px', margin: '0 auto' }}
       />
+
+      {/* 되감기, 재생/일시정지, 앞으로 감기 버튼 추가 */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+        <button onClick={handleRewind} style={{ margin: '0 10px', padding: '10px', cursor: 'pointer', background: 'none', border: 'none' }}>
+          <img src="/images/rewind-icon.png" alt="Rewind to previous lyric" style={{ width: '50px', height: '50px' }} />
+        </button>
+        <button onClick={handlePlayPause} style={{ margin: '0 10px', padding: '10px', cursor: 'pointer', background: 'none', border: 'none' }}>
+          <img
+            src={isPlaying ? "/images/pause-icon.png" : "/images/play-icon.png"}
+            alt={isPlaying ? "Pause" : "Play"}
+            style={{ width: '80px', height: '80px' }}
+          />
+        </button>
+        <button onClick={handleForward} style={{ margin: '0 10px', padding: '10px', cursor: 'pointer', background: 'none', border: 'none' }}>
+          <img src="/images/forward-icon.png" alt="Forward to next lyric" style={{ width: '50px', height: '50px' }} />
+        </button>
+      </div>
 
       {/* 노래 제목과 가수명 추가 */}
       <div style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
-        <p>판소리 '춘향가' 중<br />'군로 사령이 춘향잡으러 나가는데'</p>
+        <p>판소리 '춘향가' 중 '사랑가'</p>
       </div>
       <div style={{ marginTop: '10px', fontSize: '18px' }}>
-                <p>*중중머리</p>
+                <p>중중모리</p>
       </div>
       {/* 아래 회색 구분선 추가 */}
       <div style={{ height: '1px', backgroundColor: '#ccc', margin: '10px 0' }}></div>
 
       <div style={{ marginTop: '20px' }}>
         <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}></h2>
-        <p style={{ fontSize: '16px' }}>{currentLyric}</p>
-      </div>
-
-      {/* 현재 가사에 맞는 이미지 표시 */}
-      {currentImage && (
-        <div style={{ marginTop: '20px' }}>
+        {/* 이전 가사 및 이미지 */}
+        {currentLyricIndex > 0 && (
+          <div style={{ opacity: 0.5 }}>
+            <p style={{ fontSize: '16px', color: 'rgba(0, 0, 0, 0.5)' }}>
+              {lyrics[currentLyricIndex - 1].text}
+            </p>
+            {lyrics[currentLyricIndex - 1].image && (
+              <img
+                src={lyrics[currentLyricIndex - 1].image}
+                alt="이전 가사에 맞는 이미지"
+                style={{ width: '330px', height: 'auto' }}
+              />
+            )}
+          </div>
+        )}
+        {/* 현재 가사 및 이미지 */}
+        <p style={{ fontSize: '16px', fontWeight: 'bold' }}>{currentLyric}</p>
+        {currentImage && (
           <img
             src={currentImage}
             alt="현재 가사에 맞는 이미지"
             style={{ width: '330px', height: 'auto' }}
           />
-        </div>
-      )}
+        )}
+        {/* 다음 가사 및 이미지 */}
+        {currentLyricIndex < lyrics.length - 1 && (
+          <div style={{ opacity: 0.5 }}>
+            <p style={{ fontSize: '16px', color: 'rgba(0, 0, 0, 0.5)' }}>
+              {lyrics[currentLyricIndex + 1].text}
+            </p>
+            {lyrics[currentLyricIndex + 1].image && (
+              <img
+                src={lyrics[currentLyricIndex + 1].image}
+                alt="다음 가사에 맞는 이미지"
+                style={{ width: '330px', height: 'auto' }}
+              />
+            )}
+          </div>
+        )}
+      </div>
 
       {/* 가사 아래 회색 구분선 추가 */}
       <div style={{ height: '1px', backgroundColor: '#ccc', margin: '10px 0' }}></div>
