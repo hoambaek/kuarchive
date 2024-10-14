@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
+import Link from 'next/link';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -99,13 +100,15 @@ const MusicPlayer = () => {
         }}
       >
         {/* 뒤로가기 버튼 */}
-        <button style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          <img
-            src="/images/back-button.png"
-            alt="Back"
-            style={{ width: '30px', height: '30px' }}
-          />
-        </button>
+        <Link href="/songlist" legacyBehavior>
+          <a style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'inline-block' }}>
+            <img
+              src="/images/back-button.png"
+              alt="Back"
+              style={{ width: '30px', height: '30px' }}
+            />
+          </a>
+        </Link>
         <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Now Playing</h1>
         {/* 햄버거 메뉴 */}
         <button style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
