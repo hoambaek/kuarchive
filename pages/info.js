@@ -55,7 +55,7 @@ export default function IphonePro() {
                 fontWeight: 'bold',
                 color: '#333',
               }}>
-                연습곡을 골라보세요!
+                제작사 소개
               </h1>
             </div>
           </div>
