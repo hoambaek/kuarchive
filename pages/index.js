@@ -36,7 +36,7 @@ export default function IphonePro() {
             <div style={{
               display: 'flex',
               justifyContent: 'center',
-              marginBottom: '00px'
+              marginBottom: '20px'
             }}>
               <Image
                 src="/images/logo.png"  // 로고 이미지 경로
@@ -49,7 +49,7 @@ export default function IphonePro() {
               display: 'flex',
               justifyContent: 'center',  // 가운데 정렬
               alignItems: 'center',      // 수직 가운데 정렬
-              marginBottom: '00px'       // 10px 공백 추가
+              marginBottom: '10px'       // 10px 공백 추가
             }}>
               <h1 style={{
                 fontSize: '28px',  // 폰트 크기 증가
@@ -57,7 +57,7 @@ export default function IphonePro() {
                 color: '#2c3e50',  // 색상 변경
                 textAlign: 'center',
                 lineHeight: '1.4',  // 줄간격 조정
-                marginBottom: '00px',  // 아래 여백 추가
+                marginBottom: '10px',  // 아래 여백 추가
                 textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',  // 텍스트 그림자 추가
               }}>
                 프로처럼 노래하자! 
@@ -264,13 +264,17 @@ export default function IphonePro() {
                 left: '32px',
                 width: '370px',
               }}>
-                <img style={{
-                  height: '96px',
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  width: '108px',
-                }} alt="Mask group" src="/images/mask-group-4.png" />
+                <Link href="/2ib" legacyBehavior>
+                  <a style={{ position: 'absolute', top: '0', left: '0', width: '108px', height: '96px', display: 'block' }}>
+                    <img style={{
+                      height: '96px',
+                      position: 'absolute',
+                      top: '0',
+                      left: '0',
+                      width: '108px',
+                    }} alt="Mask group" src="/images/mask-group-4.png" />
+                  </a>
+                </Link>
                 <div style={{
                   borderRadius: '24px',
                   height: '48px',
@@ -279,23 +283,27 @@ export default function IphonePro() {
                   left: '316px',
                   width: '48px',
                 }}>
-                  <div style={{
-                    backgroundColor: '#4c0099',
-                    borderRadius: '24px',
-                    height: '48px',
-                    opacity: '0.1',
-                    position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    width: '48px',
-                  }} />
-                  <img style={{
-                    height: '13px',
-                    position: 'absolute',
-                    top: '18px',
-                    left: '19px',
-                    width: '12px',
-                  }} alt="Polygon" src="/images/polygon-1.svg" />
+                  <Link href="/2ib" legacyBehavior>
+                    <a style={{ position: 'absolute', top: '0', left: '0', width: '48px', height: '48px', display: 'block' }}>
+                      <div style={{
+                        backgroundColor: '#4c0099',
+                        borderRadius: '24px',
+                        height: '48px',
+                        opacity: '0.1',
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        width: '48px',
+                      }} />
+                      <img style={{
+                        height: '13px',
+                        position: 'absolute',
+                        top: '18px',
+                        left: '19px',
+                        width: '12px',
+                      }} alt="Polygon" src="/images/polygon-1.svg" />
+                    </a>
+                  </Link>
                 </div>
                 <div style={{
                   color: '#1f1f1f',
@@ -330,15 +338,19 @@ export default function IphonePro() {
                   whiteSpace: 'nowrap',
                 }}>8 min</div>
               </div>
-              <div style={{
-                backgroundImage: 'url(/images/mask-group-5.png)',
-                backgroundSize: '100% 100%',
-                height: '181px',
-                position: 'absolute',
-                top: '847px',
-                left: '33px',
-                width: '362px',
-              }} />
+              <Link href="/info" legacyBehavior>
+                <a style={{ position: 'absolute', top: '847px', left: '33px', width: '362px', height: '181px', display: 'block' }}>
+                  <div style={{
+                    backgroundImage: 'url(/images/mask-group-5.png)',
+                    backgroundSize: '100% 100%',
+                    height: '181px',
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                  }} />
+                </a>
+              </Link>
               <div style={{
                 color: '#1f1f1f',
                 fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',

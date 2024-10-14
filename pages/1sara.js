@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
 import Link from 'next/link';
 
 const MusicPlayer = () => {
@@ -12,6 +11,7 @@ const MusicPlayer = () => {
   const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isMetadataLoaded, setIsMetadataLoaded] = useState(false);
   const audioRef = useRef(null);
 
   const lyrics = [
@@ -26,25 +26,39 @@ const MusicPlayer = () => {
   ];
 
   useEffect(() => {
-    if (audioRef.current) {
-      const audioElement = audioRef.current.audioEl.current;
-      setDuration(audioElement.duration);
+    const audioElement = audioRef.current;
 
+    if (audioElement) {
       const updateTime = () => setCurrentTime(audioElement.currentTime);
+      const updateDuration = () => {
+        const audioDuration = audioElement.duration;
+        if (!isNaN(audioDuration)) {
+          setDuration(audioDuration);
+          setIsMetadataLoaded(true);
+        }
+      };
+
       audioElement.addEventListener('timeupdate', updateTime);
+      audioElement.addEventListener('loadedmetadata', updateDuration);
+      
+      // 이미 메타데이터가 로드된 경우를 처리
+      if (!isNaN(audioElement.duration)) {
+        updateDuration();
+      }
 
       return () => {
         audioElement.removeEventListener('timeupdate', updateTime);
+        audioElement.removeEventListener('loadedmetadata', updateDuration);
       };
     }
-  }, [audioRef.current]);
+  }, []);
 
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.audioEl.current.pause();
+        audioRef.current.pause();
       } else {
-        audioRef.current.audioEl.current.play();
+        audioRef.current.play();
       }
       setIsPlaying(!isPlaying);
     }
@@ -52,31 +66,31 @@ const MusicPlayer = () => {
 
   const handleRewind = () => {
     if (audioRef.current) {
-      const currentTime = audioRef.current.audioEl.current.currentTime;
+      const currentTime = audioRef.current.currentTime;
       const currentLyricIndex = lyrics.findIndex(lyric => lyric.time <= currentTime && currentTime < (lyrics[lyrics.indexOf(lyric) + 1]?.time || Infinity));
       
       if (currentLyricIndex > 0) {
         // 이전 가사로 이동
-        audioRef.current.audioEl.current.currentTime = lyrics[currentLyricIndex - 1].time;
+        audioRef.current.currentTime = lyrics[currentLyricIndex - 1].time;
       } else {
         // 첫 번째 가사로 돌아가기
-        audioRef.current.audioEl.current.currentTime = 0;
+        audioRef.current.currentTime = 0;
       }
     }
   };
 
   const handleForward = () => {
     if (audioRef.current) {
-      const currentTime = audioRef.current.audioEl.current.currentTime;
+      const currentTime = audioRef.current.currentTime;
       const nextLyric = lyrics.find(lyric => lyric.time > currentTime);
       if (nextLyric) {
-        audioRef.current.audioEl.current.currentTime = nextLyric.time;
+        audioRef.current.currentTime = nextLyric.time;
       }
     }
   };
 
   const handleListen = (currentTime) => {
-    const duration = audioRef.current.audioEl.current.duration;
+    const duration = audioRef.current.duration;
     setProgress((currentTime / duration) * 100);
 
     const currentLyricObj = lyrics
@@ -99,20 +113,23 @@ const MusicPlayer = () => {
     if (audioRef.current) {
       const rect = e.target.getBoundingClientRect();
       const clickX = e.clientX - rect.left;
-      const newTime = (clickX / rect.width) * audioRef.current.audioEl.current.duration;
-      audioRef.current.audioEl.current.currentTime = newTime;
+      const newTime = (clickX / rect.width) * audioRef.current.duration;
+      audioRef.current.currentTime = newTime;
     }
   };
 
   return (
-    <div style={{ textAlign: 'center', margin: '20px', padding: '10px', fontFamily: 'Pretendard' }}>
+    <div style={{ textAlign: 'center', margin: '20px auto', padding: '10px', fontFamily: 'Pretendard', maxWidth: '330px' }}>
       {/* 상단 바 */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginBottom: '10px',
+          marginBottom: '20px',
+          padding: '15px',
+          width: '100%',
+          maxWidth: '330px',
         }}
       >
         {/* 뒤로가기 버튼 */}
@@ -125,7 +142,17 @@ const MusicPlayer = () => {
             />
           </a>
         </Link>
-        <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Now Playing</h1>
+        <h1 style={{ 
+          fontSize: '24px', 
+          fontWeight: '700', 
+          color: '#000000', 
+          flex: 1, 
+          textAlign: 'center',
+          margin: '0 10px',
+          fontFamily: "'Josefin Sans', sans-serif",
+          textTransform: 'uppercase',
+          letterSpacing: '2px'
+        }}>Now Playing</h1>
         {/* 햄버거 메뉴 */}
         <button style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
           <img
@@ -159,16 +186,18 @@ const MusicPlayer = () => {
       {/* 재생 시간 및 전체 시간 표시 */}
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '330px', margin: '0 auto 10px' }}>
         <span>{new Date(currentTime * 1000).toISOString().substr(14, 5)}</span>
-        <span>{duration ? new Date(duration * 1000).toISOString().substr(14, 5) : '00:00'}</span>  // 유효성 검사 추가
+        <span>{isMetadataLoaded ? new Date(duration * 1000).toISOString().substr(14, 5) : '로딩 중...'}</span>
       </div>
 
       {/* 기본 음악 플레이어 */}
-      <ReactAudioPlayer
+      <audio
         ref={audioRef}
         src="/1sara.mp3"
-        controls={false}  // 기본 컨트롤 숨기기
-        listenInterval={100}
-        onListen={handleListen}
+        onTimeUpdate={() => handleListen(audioRef.current.currentTime)}
+        onLoadedMetadata={() => {
+          setDuration(audioRef.current.duration);
+          setIsMetadataLoaded(true);
+        }}
         style={{ width: '100%', maxWidth: '330px', margin: '0 auto' }}
       />
 
