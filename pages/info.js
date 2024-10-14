@@ -66,7 +66,7 @@ export default function IphonePro() {
             position: 'fixed',
             bottom: '0px',
             width: '100%',
-            maxWidth: '350px',  // 최대 너비 설정
+            maxWidth: '360px',  // 최대 너비 설정
             margin: '0 auto',  // 가운데 정렬
             padding: '10px 20px',  // 좌우 여백 추가
             backgroundColor: 'rgba(255, 255, 255, 1)',

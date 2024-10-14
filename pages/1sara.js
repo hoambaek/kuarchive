@@ -10,6 +10,8 @@ const MusicPlayer = () => {
   const [currentImage, setCurrentImage] = useState('');
   const [progress, setProgress] = useState(0);
   const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
 
   const lyrics = [
@@ -22,6 +24,20 @@ const MusicPlayer = () => {
     { time: 39, text: "", image: "/images/1sara/3.png" },
     { time: 44, text: "", image: "/images/1sara/4.png" },
   ];
+
+  useEffect(() => {
+    if (audioRef.current) {
+      const audioElement = audioRef.current.audioEl.current;
+      setDuration(audioElement.duration);
+
+      const updateTime = () => setCurrentTime(audioElement.currentTime);
+      audioElement.addEventListener('timeupdate', updateTime);
+
+      return () => {
+        audioElement.removeEventListener('timeupdate', updateTime);
+      };
+    }
+  }, [audioRef.current]);
 
   const handlePlayPause = () => {
     if (audioRef.current) {
@@ -140,6 +156,12 @@ const MusicPlayer = () => {
         <div style={{ width: `${progress}%`, height: '100%', backgroundColor: '#3b5998', borderRadius: '5px' }}></div>
       </div>
 
+      {/* 재생 시간 및 전체 시간 표시 */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '330px', margin: '0 auto 10px' }}>
+        <span>{new Date(currentTime * 1000).toISOString().substr(14, 5)}</span>
+        <span>{duration ? new Date(duration * 1000).toISOString().substr(14, 5) : '00:00'}</span>  // 유효성 검사 추가
+      </div>
+
       {/* 기본 음악 플레이어 */}
       <ReactAudioPlayer
         ref={audioRef}
@@ -172,7 +194,7 @@ const MusicPlayer = () => {
         <p>판소리 '춘향가' 중 '사랑가'</p>
       </div>
       <div style={{ marginTop: '10px', fontSize: '18px' }}>
-                <p>중중모리</p>
+        <p>중중모리</p>
       </div>
       {/* 아래 회색 구분선 추가 */}
       <div style={{ height: '1px', backgroundColor: '#ccc', margin: '10px 0' }}></div>
