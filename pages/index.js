@@ -98,10 +98,10 @@ export default function IphonePro() {
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>1</div>
                     <div style={{ marginLeft: '20px' }}>
                       <div style={{ fontSize: '14px', fontWeight: '700' }}>
-                        춘향가 '기생점고 대목' (동초제 ver.)
+                        춘향가 중 사랑가
                       </div>
                       <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                        박미정
+                        동초제 박미정
                       </div>
                     </div>
                   </div>
@@ -118,10 +118,10 @@ export default function IphonePro() {
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>2</div>
                     <div style={{ marginLeft: '20px' }}>
                       <div style={{ fontSize: '14px', fontWeight: '700' }}>
-                        수궁가 '토끼 배 가르는 대목'
+                        춘향가 중 이별가
                       </div>
                       <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                        안숙선
+                        동초제 박미정
                       </div>
                     </div>
                   </div>
@@ -138,10 +138,10 @@ export default function IphonePro() {
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>3</div>
                     <div style={{ marginLeft: '20px' }}>
                       <div style={{ fontSize: '14px', fontWeight: '700' }}>
-                        적벽가 '조자룡 활 쏘는 대목' (동편제 ver.)
+                        춘향가 중 군로사령이 나가는 대목
                       </div>
                       <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                        조상현
+                        동초제 박미정
                       </div>
                     </div>
                   </div>

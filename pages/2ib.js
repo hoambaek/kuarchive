@@ -220,7 +220,7 @@ const MusicPlayer = () => {
 
       {/* 노래 제목과 가수명 추가 */}
       <div style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
-        <p>판소리 '춘향가' 중 '이별가'</p>
+        <p>춘향가 중 이별가</p>
       </div>
       <div style={{ marginTop: '10px', fontSize: '18px' }}>
         <p>늦인중머리</p>
