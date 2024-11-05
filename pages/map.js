@@ -59,8 +59,8 @@ export default function IphonePro() {
               <Image
                 src="/images/logo.png"
                 alt="로고"
-                width={100}
-                height={50}
+                width={130}
+                height={130}
               />
             </div>
             <div style={{

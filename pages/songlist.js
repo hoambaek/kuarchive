@@ -34,8 +34,8 @@ export default function IphonePro() {
               <Image
                 src="/images/logo.png"  // 로고 이미지 경로
                 alt="로고"
-                width={100}  // 로고의 실제 너비에 맞게 조정하세요
-                height={50}  // 로고의 실제 높이에 맞게 조정하세요
+                width={130}  // 로고의 실제 너비에 맞게 조정하세요
+                height={130}  // 로고의 실제 높이에 맞게 조정하세요
               />
             </div>
             <div style={{
