@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Home, Music, MapPin, Info } from 'lucide-react';
 
 export default function IphonePro() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,14 +13,14 @@ export default function IphonePro() {
   return (
     <>
       <div style={{
-        backgroundColor: '#ffffff',
+        background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
       }}>
         <div style={{
-          backgroundColor: '#ffffff',
+          background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
           height: '931px',
           position: 'relative',
           width: '402px',
@@ -60,7 +61,7 @@ export default function IphonePro() {
             </div>
           </div>
           <div className="trending-podcasts" style={{
-            backgroundColor: '#ffffff',
+            background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
@@ -69,7 +70,7 @@ export default function IphonePro() {
             paddingLeft: '0',
           }}>
             <div style={{
-              backgroundColor: '#ffffff',
+              background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
               height: '700px',
               position: 'relative',
               width: '428px',
@@ -94,6 +95,7 @@ export default function IphonePro() {
                       alt="Artist 1"
                       width={70}
                       height={70}
+                      style={{ borderRadius: '10px' }}
                     />
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>1</div>
                     <div style={{ marginLeft: '20px' }}>
@@ -114,6 +116,7 @@ export default function IphonePro() {
                       alt="Artist 2"
                       width={70}
                       height={70}
+                      style={{ borderRadius: '10px' }}
                     />
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>2</div>
                     <div style={{ marginLeft: '20px' }}>
@@ -134,6 +137,7 @@ export default function IphonePro() {
                       alt="Artist 3"
                       width={70}
                       height={70}
+                      style={{ borderRadius: '10px' }}
                     />
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>3</div>
                     <div style={{ marginLeft: '20px' }}>
@@ -201,38 +205,31 @@ export default function IphonePro() {
             maxWidth: '360px',
             margin: '0 auto',
             padding: '10px 20px',
-            backgroundColor: 'rgba(255, 255, 255, 1)',
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+            borderRadius: '15px',
             flexWrap: 'wrap',
           }}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
-                <svg width="24" height="24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
+                <Home size={24} color="black" />
                 <div style={{ fontSize: '12px' }}>Home</div>
               </a>
             </Link>
             <Link href="/songlist" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
-                <svg width="24" height="24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
-                </svg>
+                <Music size={24} color="black" />
                 <div style={{ fontSize: '12px' }}>Song</div>
               </a>
             </Link>
             <Link href="/map" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
-                <svg width="24" height="24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 10.5c0-.28-.11-.53-.29-.71l-5.5-5.5a1.003 1.003 0 0 0-1.42 0l-5.5 5.5a1.003 1.003 0 0 0 0 1.42l5.5 5.5c.18.18.43.29.71.29s.53-.11.71-.29l5.5-5.5c.18-.18.29-.43.29-.71zM12 4.5l5.5 5.5-5.5 5.5-5.5-5.5L12 4.5z"/>
-                </svg>
+                <MapPin size={24} color="black" />
                 <div style={{ fontSize: '12px' }}>Map</div>
               </a>
             </Link>
             <Link href="/info" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
-                <svg width="24" height="24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
+                <Info size={24} color="black" />
                 <div style={{ fontSize: '12px' }}>Info</div>
               </a>
             </Link>
