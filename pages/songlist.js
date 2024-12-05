@@ -20,7 +20,8 @@ export default function IphonePro() {
         <div style={{
           height: '931px',
           position: 'relative', 
-          width: '402px',
+          width: '410px',
+          height: '120vh',
         }}>
           <div style={{
             padding: '20px',
