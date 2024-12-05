@@ -21,43 +21,44 @@ export default function IphonePro() {
       }}>
         <div style={{
           background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
-          height: '931px',
           position: 'relative',
           width: '402px',
+          height: '130vh',
         }}>
           <div style={{
-            padding: '20px',
+            paddingTop: '60px',
+            paddingBottom: '80px',
             fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
           }}>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
-              marginBottom: '-20px'
+              alignItems: 'center',
+              marginBottom: '-20px',
+              position: 'fixed',
+              top: '0',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '100%',
+              height: '50px',
+              backgroundColor: 'white',
+              zIndex: '1000',
             }}>
               <Image
                 src="/images/logo.png"
                 alt="로고"
-                width={130}
-                height={130}
+                width={200}
+                height={29}
               />
             </div>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              marginBottom: '-20px'
+              marginBottom: '10px',
+              marginTop: '20px',
             }}>
-              <h1 style={{
-                fontSize: '28px',
-                fontWeight: 'bold',
-                color: '#2c3e50',
-                textAlign: 'center',
-                lineHeight: '1.4',
-                marginBottom: '10px',
-                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
-              }}>
-                {/* 여기 텍스트 모두 제거됨 */}
-              </h1>
+              
             </div>
           </div>
           <div className="trending-podcasts" style={{
@@ -66,12 +67,11 @@ export default function IphonePro() {
             flexDirection: 'row',
             justifyContent: 'center',
             width: '100%',
-            marginTop: '0px',
+            marginTop: '-100px',
             paddingLeft: '0',
           }}>
             <div style={{
               background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
-              height: '700px',
               position: 'relative',
               width: '428px',
               marginLeft: '0',
@@ -100,10 +100,10 @@ export default function IphonePro() {
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>1</div>
                     <div style={{ marginLeft: '20px' }}>
                       <div style={{ fontSize: '14px', fontWeight: '700' }}>
-                        춘향가 중 사랑가
+                        춘향가 중 사랑가(동초제)
                       </div>
                       <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                        동초제 박미정
+                        박미정
                       </div>
                     </div>
                   </div>
@@ -121,10 +121,10 @@ export default function IphonePro() {
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>2</div>
                     <div style={{ marginLeft: '20px' }}>
                       <div style={{ fontSize: '14px', fontWeight: '700' }}>
-                        춘향가 중 이별가
+                        춘향가 중 왼갖생각(동초제)
                       </div>
                       <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                        동초제 박미정
+                        박미정
                       </div>
                     </div>
                   </div>
@@ -142,10 +142,10 @@ export default function IphonePro() {
                     <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>3</div>
                     <div style={{ marginLeft: '20px' }}>
                       <div style={{ fontSize: '14px', fontWeight: '700' }}>
-                        춘향가 중 군로사령이 나가는 대목
+                        춘향가 중 군로사령(동초제)
                       </div>
                       <div style={{ fontSize: '14px', opacity: '0.7' }}>
-                        동초제 박미정
+                        박미정
                       </div>
                     </div>
                   </div>
@@ -163,36 +163,68 @@ export default function IphonePro() {
                 whiteSpace: 'nowrap',
               }}>추천 이벤트</div>
 
-              <a href="https://naver.com" target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', top: '420px', left: '32px' }}>
+              <div style={{
+                marginTop: '30px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                position: 'absolute',
+                top: '420px',
+                left: '32px',
+                width: '330px',
+                height: '430px',
+              }}>
                 <Image
-                  src="/images/mask-group-5.png"
-                  alt="Mask Group 5"
-                  width={360}
-                  height={200}
+                  src="/images/event1.png"
+                  alt="Image 1"
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px' }}
                 />
-              </a>
-
+                <Image
+                  src="/images/event2.png"
+                  alt="Image 2"
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px' }}
+                />
+                <Image
+                  src="/images/event3.png"
+                  alt="Image 3"
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px' }}
+                />
+              </div>
               <div style={{
-                color: '#1f1f1f',
-                fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
-                fontSize: '16px',
-                fontWeight: '700',
+                display: 'flex',
+                justifyContent: 'space-between',
                 position: 'absolute',
-                top: '630px',
+                top: '620px',
                 left: '32px',
-                whiteSpace: 'nowrap',
-              }}>국악한마당축제 (10.11~10.15일)</div>
-              <div style={{
-                color: '#1f1f1f',
-                fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
-                fontSize: '14px',
-                fontWeight: '400',
-                position: 'absolute',
-                top: '654px',
-                left: '32px',
-                opacity: '0.7',
-                whiteSpace: 'nowrap',
-              }}>전라남도 강진</div>
+                width: '330px',
+              }}>
+                <Image
+                  src="/images/event4.png"
+                  alt="Image 4"
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px' }}
+                />
+                <Image
+                  src="/images/event5.png"
+                  alt="Image 5"
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px' }}
+                />
+                <Image
+                  src="/images/event6.png"
+                  alt="Image 6"
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px' }}
+                />
+              </div>
             </div>
           </div>
           <div style={{
@@ -202,12 +234,14 @@ export default function IphonePro() {
             position: 'fixed',
             bottom: '0',
             width: '100%',
-            maxWidth: '360px',
+            maxWidth: '400px',
             margin: '0 auto',
             padding: '10px 20px',
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
             borderRadius: '15px',
             flexWrap: 'wrap',
+            boxSizing: 'border-box',
+            height: 'auto',
           }}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
@@ -230,7 +264,7 @@ export default function IphonePro() {
             <Link href="/info" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
                 <Info size={24} color="black" />
-                <div style={{ fontSize: '12px' }}>Info</div>
+                <div style={{ fontSize: '12px' }}>Info-News</div>
               </a>
             </Link>
           </div>

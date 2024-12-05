@@ -36,20 +36,30 @@ export default function IphonePro() {
             <div style={{
               display: 'flex',
               justifyContent: 'center',
-              marginBottom: '20px'
+              alignItems: 'center',
+              marginBottom: '-20px',
+              position: 'fixed',
+              top: '0',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '100%',
+              height: '50px',
+              backgroundColor: 'white',
+              zIndex: '1000',
             }}>
               <Image
                 src="/images/logo.png"
                 alt="로고"
-                width={130}
-                height={130}
+                width={200}
+                height={29}
               />
             </div>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              marginBottom: '10px'
+              marginBottom: '0px',
+              marginTop: '50px'
             }}>
               <h1 style={{
                 fontSize: '24px',
@@ -70,34 +80,25 @@ export default function IphonePro() {
               alignItems: 'center',
               marginBottom: '20px'
             }}>
-              <Image
-                src="/images/mask-group-5.png"
-                alt="이벤트 이미지"
-                width={330}
-                height={165}
-                layout="responsive"
-              />
-              <div style={{
-                width: '100%',
-                maxWidth: '330px',
-                marginTop: '10px',
-                textAlign: 'left'
-              }}>
-                <div style={{
-                  color: '#1f1f1f',
-                  fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  marginBottom: '4px',
-                }}>국악한마당축제 (10.11~10.15일)</div>
-                <div style={{
-                  color: '#1f1f1f',
-                  fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
-                  fontSize: '14px',
-                  fontWeight: '400',
-                  opacity: '0.7',
-                }}>전라남도 강진</div>
-              </div>
+            </div>
+            
+            {/* 새로운 이미지 레이아웃 추가 */}
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              marginTop: '20px',
+            }}>
+              {Array.from({ length: 12 }).map((_, index) => (
+                <Image
+                  key={index}
+                  src={`/images/event${index + 1}.png`} // 이미지 경로
+                  alt={`Image ${index + 1}`}
+                  width={100}
+                  height={159}
+                  style={{ borderRadius: '10px', marginBottom: '20px' }}
+                />
+              ))}
             </div>
           </div>
           <div style={{
@@ -135,7 +136,7 @@ export default function IphonePro() {
             <Link href="/info" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
                 <Info size={24} color="black" />
-                <div style={{ fontSize: '12px' }}>Info</div>
+                <div style={{ fontSize: '12px' }}>Info-News</div>
               </a>
             </Link>
           </div>

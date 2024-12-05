@@ -11,16 +11,15 @@ export default function IphonePro() {
         <link rel="stylesheet" as="style" crossOrigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
       </Head>
       <div style={{
-        backgroundColor: '#ffffff',
+        background: 'linear-gradient(to bottom, #ffffff, #f0f0f0)',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
       }}>
         <div style={{
-          backgroundColor: '#ffffff',
           height: '931px',
-          position: 'relative',
+          position: 'relative', 
           width: '402px',
         }}>
           <div style={{
@@ -30,13 +29,22 @@ export default function IphonePro() {
             <div style={{
               display: 'flex',
               justifyContent: 'center',
-              marginBottom: '20px'
+              alignItems: 'center',
+              marginBottom: '-20px',
+              position: 'fixed',
+              top: '0',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '100%',
+              height: '50px',
+              backgroundColor: 'white',
+              zIndex: '1000',
             }}>
               <Image
                 src="/images/logo.png"  // 로고 이미지 경로
                 alt="로고"
-                width={130}  // 로고의 실제 너비에 맞게 조정하세요
-                height={130}  // 로고의 실제 높이에 맞게 조정하세요
+                width={200}
+                height={29}  // 로고의 실제 높이에 맞게 조정하세요
               />
             </div>
             <div style={{
@@ -236,7 +244,7 @@ export default function IphonePro() {
             <Link href="/info" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
                 <Info size={24} color="black" />
-                <div style={{ fontSize: '12px' }}>Info</div>
+                <div style={{ fontSize: '12px' }}>Info-News</div>
               </a>
             </Link>
           </div>
