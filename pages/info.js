@@ -102,19 +102,21 @@ export default function IphonePro() {
             </div>
           </div>
           <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            position: 'fixed',
-            bottom: '0',
-            width: '100%',
-            maxWidth: '360px',
-            margin: '0 auto',
-            padding: '10px 20px',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '15px',
-            flexWrap: 'wrap',
-          }}>
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  position: 'fixed',
+  bottom: '0',
+  width: '100%',
+  maxWidth: '380px',
+  margin: '0 auto',
+  padding: '10px 20px',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  borderRadius: '15px',
+  flexWrap: 'wrap',
+  boxSizing: 'border-box',
+  height: 'auto'
+}}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
                 <Home size={24} color="black" />

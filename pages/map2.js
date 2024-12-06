@@ -42,12 +42,15 @@ export default function IphonePro() {
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
+        overflowX: 'hidden',
+        overflowY: 'auto',
       }}>
         <div style={{
           backgroundColor: '#ffffff',
           height: '900px',
           position: 'relative',
           width: '402px',
+          overflowX: 'hidden',
         }}>
           <div style={{
             padding: '20px',
@@ -137,23 +140,25 @@ export default function IphonePro() {
             </div>
           </div>
           <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            position: 'fixed',
-            bottom: '0',
-            width: '100%',
-            maxWidth: '360px',
-            margin: '0 auto',
-            padding: '5px 20px',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '15px',
-            flexWrap: 'wrap',
-          }}>
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  position: 'fixed',
+  bottom: '0',
+  width: '100%',
+  maxWidth: '380px',
+  margin: '0 auto',
+  padding: '10px 20px',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  borderRadius: '15px',
+  flexWrap: 'wrap',
+  boxSizing: 'border-box',
+  height: 'auto'
+}}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
-                <Home size={20} color="black" />
-                <div style={{ fontSize: '10px' }}>Home</div>
+                <Home size={24} color="black" />
+                <div style={{ fontSize: '12px' }}>Home</div>
               </a>
             </Link>
             <Link href="/songlist" legacyBehavior>
@@ -204,6 +209,11 @@ export default function IphonePro() {
         @keyframes dissolve {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+      `}</style>
+      <style jsx global>{`
+        body {
+          overflow-x: hidden;
         }
       `}</style>
     </>

@@ -88,8 +88,8 @@ export default function IphonePro() {
               <Image
                 src="/images/map_second.png"
                 alt="전국 판소리 지도"
-                width={400}  // 이미지의 너비
-                height={567}  // 이미지의 높이
+                width={360}  // 이미지의 너비
+                height={511}  // 이미지의 높이
               />
               {pinPositions.map((position, index) => (
                 <div
@@ -117,23 +117,25 @@ export default function IphonePro() {
             </div>
           </div>
           <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            position: 'fixed',
-            bottom: '0',
-            width: '100%',
-            maxWidth: '360px',
-            margin: '0 auto',
-            padding: '5px 20px',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '15px',
-            flexWrap: 'wrap',
-          }}>
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  position: 'fixed',
+  bottom: '0',
+  width: '100%',
+  maxWidth: '380px',
+  margin: '0 auto',
+  padding: '10px 20px',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  borderRadius: '15px',
+  flexWrap: 'wrap',
+  boxSizing: 'border-box',
+  height: 'auto'
+}}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
-                <Home size={20} color="black" />
-                <div style={{ fontSize: '10px' }}>Home</div>
+                <Home size={24} color="black" />
+                <div style={{ fontSize: '12px' }}>Home</div>
               </a>
             </Link>
             <Link href="/songlist" legacyBehavior>

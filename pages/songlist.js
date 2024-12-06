@@ -20,7 +20,7 @@ export default function IphonePro() {
         <div style={{
           height: '931px',
           position: 'relative', 
-          width: '410px',
+          width: '402px',
           height: '120vh',
         }}>
           <div style={{
@@ -68,8 +68,8 @@ export default function IphonePro() {
               <div style={{
                 backgroundImage: 'url(/images/group-144.png)',
                 backgroundSize: '100% 100%',
-                height: '140px',
-                width: '355px',
+                height: '142px',
+                width: '360px',
                 position: 'relative',
               }}>
                 <img
@@ -93,8 +93,8 @@ export default function IphonePro() {
               <div style={{
                 backgroundImage: 'url(/images/group-146.png)',
                 backgroundSize: '100% 100%',
-                height: '140px',
-                width: '355px',
+                height: '142px',
+                width: '360px',
                 position: 'relative',
               }}>
                 <img
@@ -121,11 +121,11 @@ export default function IphonePro() {
                   alt="Group"
                   src="/images/group-160.png"
                   style={{
-                    height: '140px',
+                    height: '142px',
                     left: '10px',
                     position: 'absolute',
                     top: 0,
-                    width: '355px',
+                    width: '360px',
                   }}
                 />
                 <img
@@ -144,86 +144,72 @@ export default function IphonePro() {
               </div>
             </a>
           </Link>
-          <div style={{
-            height: '429px',
-            left: '13px',
-            position: 'absolute',
-            top: '570px',
-            width: '375px',
-          }}>
-            <Link href="/4galka" legacyBehavior>
-              <a style={{ display: 'block', position: 'relative', width: '375px', height: '140px' }}>
+          <Link href="/4galka" legacyBehavior>
+            <a style={{ display: 'block', position: 'absolute', top: '570px', left: '23px', width: '355px', height: '140px' }}>
+              <div style={{
+                backgroundImage: 'url(/images/group-148.png)',
+                backgroundSize: '100% 100%',
+                height: '142px',
+                width: '360px',
+                position: 'relative',
+              }}>
                 <img
-                  className="group-3"
-                  alt="Group"
-                  src="/images/group-148.png"
-                  style={{
-                    height: '160px',
-                    left: 0,
-                    position: 'absolute',
-                    top: '0px',  // 간격 조정
-                    width: '375px',
-                  }}
-                />
-                <img
-                  className="element-galka"
-                  alt="Element"
+                  className="img"
+                  alt="Galka"
                   src="/images/4galka-1.png"
                   style={{
-                    height: '77px',
-                    left: '41px',
+                    height: '85px',
+                    left: '27px',
                     objectFit: 'cover',
                     position: 'absolute',
-                    top: '32px',  // 간격 조정
-                    width: '77px',
+                    top: '21px',
+                    width: '85px',
                   }}
                 />
-              </a>
-            </Link>
-            <Link href="/5ssuk" legacyBehavior>
-              <a style={{ display: 'block', position: 'relative', width: '375px', height: '140px', top: '0px' }}>
+              </div>
+            </a>
+          </Link>
+          <Link href="/5ssuk" legacyBehavior>
+            <a style={{ display: 'block', position: 'absolute', top: '710px', left: '23px', width: '355px', height: '140px' }}>
+              <div style={{
+                backgroundImage: 'url(/images/group-149.png)',
+                backgroundSize: '100% 100%',
+                height: '142px',
+                width: '360px',
+                position: 'relative',
+              }}>
                 <img
-                  className="group-4"
-                  alt="Group"
-                  src="/images/group-149.png"
-                  style={{
-                    height: '160px',
-                    left: 0,
-                    position: 'absolute',
-                    top: '0px',  // 간격 조정
-                    width: '375px',
-                  }}
-                />
-                <img
-                  className="element-ssuk"
-                  alt="Element"
+                  className="img"
+                  alt="Ssuk"
                   src="/images/5ssuk-1.png"
                   style={{
-                    height: '77px',
-                    left: '41px',
+                    height: '85px',
+                    left: '27px',
                     objectFit: 'cover',
                     position: 'absolute',
-                    top: '32px',  // 간격 조정
-                    width: '77px',
+                    top: '21px',
+                    width: '85px',
                   }}
                 />
-              </a>
-            </Link>
-          </div>
+              </div>
+            </a>
+          </Link>
           <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            position: 'fixed',
-            bottom: '0',
-            width: '100%',
-            maxWidth: '360px',
-            margin: '0 auto',
-            padding: '10px 20px',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '15px',
-            flexWrap: 'wrap',
-          }}>
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  position: 'fixed',
+  bottom: '0',
+  width: '100%',
+  maxWidth: '380px',
+  margin: '0 auto',
+  padding: '10px 20px',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  borderRadius: '15px',
+  flexWrap: 'wrap',
+  boxSizing: 'border-box',
+  height: 'auto'
+}}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
                 <Home size={24} color="black" />

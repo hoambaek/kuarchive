@@ -234,7 +234,7 @@ export default function IphonePro() {
             position: 'fixed',
             bottom: '0',
             width: '100%',
-            maxWidth: '400px',
+            maxWidth: '380px',
             margin: '0 auto',
             padding: '10px 20px',
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
