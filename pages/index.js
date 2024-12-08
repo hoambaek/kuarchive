@@ -233,15 +233,15 @@ export default function IphonePro() {
             alignItems: 'center',
             position: 'fixed',
             bottom: '0',
-            width: '100%',
-            maxWidth: '380px',
-            margin: '0 auto',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '360px',
             padding: '10px 20px',
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '15px',
-            flexWrap: 'wrap',
+            borderRadius: '15px 15px 0 0',
             boxSizing: 'border-box',
-            height: 'auto',
+            height: '60px',
+            zIndex: 1000
           }}>
             <Link href="/" legacyBehavior>
               <a style={{ textAlign: 'center', color: 'black', textDecoration: 'none', flex: '1' }}>
