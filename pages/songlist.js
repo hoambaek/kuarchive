@@ -16,12 +16,15 @@ export default function IphonePro() {
         flexDirection: 'row',
         justifyContent: 'center',
         width: '100%',
+        maxWidth: '100vw',
+        margin: '0 auto',
       }}>
         <div style={{
-          height: '931px',
-          position: 'relative', 
-          width: '360px',
+          position: 'relative',
+          width: '100%',
+          maxWidth: '360px',
           height: '120vh',
+          margin: '0 auto',
         }}>
           <div style={{
             padding: '20px',

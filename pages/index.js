@@ -99,12 +99,12 @@ export default function IphonePro() {
                       height={70}
                       style={{ borderRadius: '10px' }}
                     />
-                    <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>1</div>
+                    <div style={{ fontSize: '20px', fontWeight: '700', marginLeft: '20px' }}>1</div>
                     <div style={{ marginLeft: '20px' }}>
-                      <div style={{ fontSize: '14px', fontWeight: '700' }}>
+                      <div style={{ fontSize: '17px', fontWeight: '700' }}>
                         춘향가 중 사랑가(동초제)
                       </div>
-                      <div style={{ fontSize: '14px', opacity: '0.7' }}>
+                      <div style={{ fontSize: '16px', opacity: '0.7' }}>
                         박미정
                       </div>
                     </div>
@@ -120,12 +120,12 @@ export default function IphonePro() {
                       height={70}
                       style={{ borderRadius: '10px' }}
                     />
-                    <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>2</div>
+                    <div style={{ fontSize: '20px', fontWeight: '700', marginLeft: '20px' }}>2</div>
                     <div style={{ marginLeft: '20px' }}>
-                      <div style={{ fontSize: '14px', fontWeight: '700' }}>
+                      <div style={{ fontSize: '17px', fontWeight: '700' }}>
                         춘향가 중 왼갖생각(동초제)
                       </div>
-                      <div style={{ fontSize: '14px', opacity: '0.7' }}>
+                      <div style={{ fontSize: '16px', opacity: '0.7' }}>
                         박미정
                       </div>
                     </div>
@@ -141,12 +141,12 @@ export default function IphonePro() {
                       height={70}
                       style={{ borderRadius: '10px' }}
                     />
-                    <div style={{ fontSize: '16px', fontWeight: '700', marginLeft: '20px' }}>3</div>
+                    <div style={{ fontSize: '20px', fontWeight: '700', marginLeft: '20px' }}>3</div>
                     <div style={{ marginLeft: '20px' }}>
-                      <div style={{ fontSize: '14px', fontWeight: '700' }}>
+                      <div style={{ fontSize: '17px', fontWeight: '700' }}>
                         춘향가 중 군로사령(동초제)
                       </div>
-                      <div style={{ fontSize: '14px', opacity: '0.7' }}>
+                      <div style={{ fontSize: '16px', opacity: '0.7' }}>
                         박미정
                       </div>
                     </div>
