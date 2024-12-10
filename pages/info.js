@@ -34,26 +34,28 @@ export default function IphonePro() {
             fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
           }}>
             <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginBottom: '-20px',
-              position: 'fixed',
-              top: '0',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '100%',
-              height: '50px',
-              backgroundColor: 'white',
-              zIndex: '1000',
-            }}>
-              <Image
-                src="/images/logo.png"
-                alt="로고"
-                width={200}
-                height={29}
-              />
-            </div>
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: '-20px',
+  position: 'fixed',
+  top: '0',
+  left: '0',  // 변경
+  width: '100%',
+  height: '50px',
+  backgroundColor: 'white',
+  zIndex: '1000',
+  paddingTop: '20px',  // 추가
+  paddingBottom: '10px',  // 추가
+  borderBottom: '1px solid rgba(0, 0, 0, 0.1)',  // 추가: 구분선 효과
+}}>
+  <Image
+    src="/images/logo.png"
+    alt="로고"
+    width={200}
+    height={29}
+  />
+</div>
             <div style={{
               display: 'flex',
               justifyContent: 'center',

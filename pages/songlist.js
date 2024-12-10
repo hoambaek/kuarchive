@@ -20,7 +20,7 @@ export default function IphonePro() {
         <div style={{
           height: '931px',
           position: 'relative', 
-          width: '402px',
+          width: '360px',
           height: '120vh',
         }}>
           <div style={{
@@ -28,26 +28,28 @@ export default function IphonePro() {
             fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
           }}>
             <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginBottom: '-20px',
-              position: 'fixed',
-              top: '0',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '100%',
-              height: '50px',
-              backgroundColor: 'white',
-              zIndex: '1000',
-            }}>
-              <Image
-                src="/images/logo.png"  // 로고 이미지 경로
-                alt="로고"
-                width={200}
-                height={29}  // 로고의 실제 높이에 맞게 조정하세요
-              />
-            </div>
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: '-20px',
+  position: 'fixed',
+  top: '0',
+  left: '0',  // 변경
+  width: '100%',
+  height: '50px',
+  backgroundColor: 'white',
+  zIndex: '1000',
+  paddingTop: '20px',  // 추가
+  paddingBottom: '10px',  // 추가
+  borderBottom: '1px solid rgba(0, 0, 0, 0.1)',  // 추가: 구분선 효과
+}}>
+  <Image
+    src="/images/logo.png"
+    alt="로고"
+    width={200}
+    height={29}
+  />
+</div>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -64,12 +66,12 @@ export default function IphonePro() {
             </div>
           </div>
           <Link href="/1sara" legacyBehavior>
-            <a style={{ display: 'block', position: 'absolute', top: '149px', left: '23px', width: '355px', height: '140px' }}>
+            <a style={{ display: 'block', position: 'absolute', top: '149px', left: '2px', width: '355px', height: '140px' }}>
               <div style={{
                 backgroundImage: 'url(/images/group-144.png)',
                 backgroundSize: '100% 100%',
                 height: '142px',
-                width: '360px',
+                width: '355px',
                 position: 'relative',
               }}>
                 <img
@@ -89,12 +91,12 @@ export default function IphonePro() {
             </a>
           </Link>
           <Link href="/2ib" legacyBehavior>
-            <a style={{ display: 'block', position: 'absolute', top: '289px', left: '23px', width: '355px', height: '140px' }}>
+            <a style={{ display: 'block', position: 'absolute', top: '289px', left: '2px', width: '355px', height: '140px' }}>
               <div style={{
                 backgroundImage: 'url(/images/group-146.png)',
                 backgroundSize: '100% 100%',
                 height: '142px',
-                width: '360px',
+                width: '355px',
                 position: 'relative',
               }}>
                 <img
@@ -114,7 +116,7 @@ export default function IphonePro() {
             </a>
           </Link>
           <Link href="/3gunro" legacyBehavior>
-            <a style={{ display: 'block', position: 'absolute', top: '430px', left: '13px', width: '375px', height: '140px' }}>
+            <a style={{ display: 'block', position: 'absolute', top: '430px', left: '2px', width: '355px', height: '140px' }}>
               <div style={{ position: 'relative', width: '355px', height: '140px' }}>
                 <img
                   className="group-2"
@@ -122,10 +124,10 @@ export default function IphonePro() {
                   src="/images/group-160.png"
                   style={{
                     height: '142px',
-                    left: '10px',
+                    left: '0px',
                     position: 'absolute',
                     top: 0,
-                    width: '360px',
+                    width: '355px',
                   }}
                 />
                 <img
@@ -134,7 +136,7 @@ export default function IphonePro() {
                   src="/images/3gunro-1.png"
                   style={{
                     height: '85px',
-                    left: '37px',
+                    left: '27px',
                     objectFit: 'cover',
                     position: 'absolute',
                     top: '20px',
@@ -145,12 +147,12 @@ export default function IphonePro() {
             </a>
           </Link>
           <Link href="/4galka" legacyBehavior>
-            <a style={{ display: 'block', position: 'absolute', top: '570px', left: '23px', width: '355px', height: '140px' }}>
+            <a style={{ display: 'block', position: 'absolute', top: '570px', left: '2px', width: '355px', height: '140px' }}>
               <div style={{
                 backgroundImage: 'url(/images/group-148.png)',
                 backgroundSize: '100% 100%',
                 height: '142px',
-                width: '360px',
+                width: '355px',
                 position: 'relative',
               }}>
                 <img
@@ -170,12 +172,12 @@ export default function IphonePro() {
             </a>
           </Link>
           <Link href="/5ssuk" legacyBehavior>
-            <a style={{ display: 'block', position: 'absolute', top: '710px', left: '23px', width: '355px', height: '140px' }}>
+            <a style={{ display: 'block', position: 'absolute', top: '710px', left: '2px', width: '355px', height: '140px' }}>
               <div style={{
                 backgroundImage: 'url(/images/group-149.png)',
                 backgroundSize: '100% 100%',
                 height: '142px',
-                width: '360px',
+                width: '355px',
                 position: 'relative',
               }}>
                 <img
